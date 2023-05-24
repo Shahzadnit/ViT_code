@@ -215,7 +215,7 @@ def main():
     criterion = CrossEntropyLoss()
     for epoch in trange(N_EPOCHS, desc="Training"):
         train_loss = 0.0
-        for batch in tqdm(train_loader, desc=f"Epoch {epoch + 1} in training", leave=False):
+        for batch in tqdm(F_train_loader, desc=f"Epoch {epoch + 1} in training", leave=False):
             x, y = batch
             x, y = x.to(device), y.to(device)
             y_hat = model(x)
@@ -233,7 +233,7 @@ def main():
     with torch.no_grad():
         correct, total = 0, 0
         test_loss = 0.0
-        for batch in tqdm(test_loader, desc="Testing"):
+        for batch in tqdm(F_test_loader, desc="Testing"):
             x, y = batch
             x, y = x.to(device), y.to(device)
             y_hat = model(x)
