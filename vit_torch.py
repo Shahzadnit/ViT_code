@@ -41,15 +41,6 @@ F_test_loader = DataLoader(F_testset, batch_size=64, shuffle=True)
 
 #######################################################################################################################################################
 
-
-
-
-
-
-
-
-
-
 def patchify(images, n_patches):
     n, c, h, w = images.shape
 
